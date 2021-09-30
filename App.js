@@ -2,82 +2,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import {Button, Icon} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppLoading from 'expo-app-loading';
 
 // Importações páginas
-import ComponenteImagem from './components/componenteImagem';
+// import ComponenteImagem from './src/pages/Tela-Inicial/components/componenteImagem';
+import Home from './src/pages/Tela-Inicial';
+import Login from './src/pages/Login';
 
 // Importações de fontes
 import {
   useFonts, 
-  Quicksand_300Light,
   Quicksand_400Regular,
-  Quicksand_500Medium,
-  Quicksand_600SemiBold,
   Quicksand_700Bold 
 } from '@expo-google-fonts/quicksand';
 
-function Home({navigation}){
-  return(
-    <><View style={styles.container}>
-      <ComponenteImagem />
-      <View style={styles.botaoVamosiniciar} >
-        <Text style={styles.textVamosiniciar} onPress={() => navigation.navigate('Login')}>Login</Text>
-        </View>
-    </View>
-      </>
-  )
-}
-
-function Login({ navigation }){
-  let[fontsLoader] = useFonts({
-    Quicksand_400Regular,
-    Quicksand_700Bold
-  });
-  if(!fontsLoader){
-    return <AppLoading/>
-  }else{
-  return(
-    <>
-    <View style={styles.containerlogin1}>
-      <Icon name='arrow-back-ios' style={styles.iconBack} />
-      <Text onPress={() => navigation.navigate('Home')} style={styles.buttonback}>Voltar</Text>
-    </View>
-    <View style={styles.containerlogin2}>
-      <View style={styles.centrologin}>
-        <Text style={styles.textodologin}>Seja Bem-Vindo!</Text>
-      </View>
-      
-      <View>
-      <TextInput style={styles.inputText} placeholder="Email" />
-      <TextInput style={styles.inputText} secureTextEntry={true} placeholder="Senha" autoCorrect={false} />
-      </View>
-
-      <View style={styles.botoes}>
-
-        <View style={styles.botaoLogin}>
-        <Text style={styles.textLogin}>Login</Text>
-        </View>
-
-        <View style={styles.botaoEsqueceuasenha}>
-        <Text style={styles.textEsqueceuasenha}>Esqueceu a senha?</Text>
-        </View>
-
-      </View>
-
-      <View>
-        <View style={styles.botaoVoceenovo}>
-          <Text style={styles.textEsqueceuasenha} onPress={() => navigation.navigate('Cadastro')}>Você é novo aqui?</Text>
-        </View>
-      </View>
-    </View>
-    </>
-  );
-  }
-};
 
 function Cadastro({navigation}){
   let[fontsLoader] = useFonts({
