@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   textVamosiniciar:{
     fontSize:20,
     color: '#000',
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 });
 

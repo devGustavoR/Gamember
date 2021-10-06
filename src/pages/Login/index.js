@@ -1,24 +1,45 @@
 // Importações React
-import React, {Component} from 'react';
-import { Text, View, TextInput } from 'react-native';
+import React, {Component, useState,useEffect} from 'react';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
 
+// Importação Firebase
+import firebase from '../../config/firebase';
+
+
 // Importações de páginas
 
-export default class Login extends Component{
+export default function Login({navigation}){
+    const [email,setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorLogin, setErrorLogin] = useState('');
 
-  render(){
+    const loginFirebase = () =>{
 
-    // const [email,setEmail] = useState('');
-    // const [senha, setSenha] = useState('');
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        let user = userCredential.user;
+        console.log(user)
+        // navigation.navigate('Home', {idUser: user.uid})
+      })
+      .catch((error) => {
+        setErrorLogin(true)
+        let errorCode = error.code;
+        let errorMessage = error.message;
+      });
+    }
     
-    const { navigation } = this.props
+    useEffect(()=>{
+
+    }, [])
+    
 
   return(
     <>
     <View style={styles.containerlogin1}>
-      <Icon name='arrow-back-ios' style={styles.iconBack} onPress={() => navigation.navigate('Home')} />
+      {/* <Icon name='arrow-back-ios' style={styles.iconBack2} onPress={() => navigation.navigate('Home')} /> */}
+      <Icon name='arrow-back-ios' style={styles.iconBack2} />
       <Text onPress={() => navigation.navigate('Home')} style={styles.buttonback}>Voltar</Text>
     </View>
     <View style={styles.containerlogin2}>
@@ -29,20 +50,43 @@ export default class Login extends Component{
       <View>
         <TextInput style={styles.inputText} 
         placeholder="Email" 
-        type="text" 
-        onChangeText={(text) => setEmail(text)} 
-        value={email}/>
+        type="text"
+        onChangeText={(text) => setEmail(text)}
+        value={email} 
+        />
         <TextInput style={styles.inputText} 
         secureTextEntry={true} 
         placeholder="Senha" autoCorrect={false} 
-        type="text" onChangeText={(text) => setSenha(text)} value={senha} />
+        type="text"
+        onChangeText={(text) => setPassword(text)}
+        value={password} />
+        
+        {/* Error */}
+        {errorLogin === true
+        ?
+        <View>
+          <Icon name='warning' size={24}/>
+          <Text>Email ou senha inválida</Text>
+        </View>
+        :
+        <View/>
+        }
+
+        {email === "" || password === ""
+        ?
+        <TouchableOpacity disabled={true} style={styles.botaoLogin} >
+          <Text style={styles.textLogin}>Login</Text>   
+        </TouchableOpacity>
+        :
+        <TouchableOpacity style={styles.botaoLogin} onPress={loginFirebase} >
+          <Text style={styles.textLogin}>Login</Text>   
+        </TouchableOpacity>
+        }
+
+
       </View>
 
       <View style={styles.botoes}>
-
-        <View style={styles.botaoLogin}>
-          <Text style={styles.textLogin}>Login</Text>
-        </View>
 
         <View style={styles.botaoEsqueceuasenha}>
           <Text style={styles.textEsqueceuasenha}>Esqueceu a senha?</Text>
@@ -61,4 +105,4 @@ export default class Login extends Component{
     </>
   );
 }
-}
+

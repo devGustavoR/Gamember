@@ -7,13 +7,12 @@ const styles = StyleSheet.create({
     fontSize:20,
     marginLeft:1,
     marginTop:20,
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 
-  iconBack:{
+  iconBack2:{
     marginTop:20,
     marginLeft:10,
-    color:'#30c5ff'
   },
 
   containerlogin1:{
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize:40,
     marginTop:10,
     color:'#504F4F',
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 
   centrologin:{
@@ -50,7 +49,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth:1,
     marginBottom:20,
-    fontFamily:'Quicksand_400Regular',
+    borderBottomColor:'#30c5ff',
+    // fontFamily:'Quicksand_400Regular',
   },
 
   inputText2:{
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth:1,
     marginBottom:5,
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 
   botoes:{
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   textLogin:{
     fontSize:20,
     color: '#fff',
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 
   botaoEsqueceuasenha:{
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   textEsqueceuasenha:{
     color:'#504F4F',
     fontSize:20,
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 
   botaoVoceenovo:{
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   textVoceenovo:{
     color:'#504F4F',
     fontSize:15,
-    fontFamily:'Quicksand_400Regular',
+    // fontFamily:'Quicksand_400Regular',
   },
 });
 
