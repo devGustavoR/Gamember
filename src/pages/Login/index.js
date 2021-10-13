@@ -11,17 +11,16 @@ import firebase from '../../config/firebase';
 // Importações de páginas
 
 export default function Login({navigation}){
-    const [email,setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorLogin, setErrorLogin] = useState('');
+      const [email,setEmail] = useState('');
+      const [password, setPassword] = useState('');
+      const [errorLogin, setErrorLogin] = useState('');
 
     const loginFirebase = () =>{
 
       firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         let user = userCredential.user;
-        console.log(user)
-        // navigation.navigate('Home', {idUser: user.uid})
+        navigation.navigate('Home', {idUser: user.uid})
       })
       .catch((error) => {
         setErrorLogin(true)
@@ -89,7 +88,7 @@ export default function Login({navigation}){
       <View style={styles.botoes}>
 
         <View style={styles.botaoEsqueceuasenha}>
-          <Text style={styles.textEsqueceuasenha}>Esqueceu a senha?</Text>
+          <Text style={styles.textEsqueceuasenha} onPress={() => navigation.navigate('esqueceuSenha')}>Esqueceu a senha?</Text>
         </View>
 
       </View>

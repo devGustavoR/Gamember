@@ -11,55 +11,10 @@ import AppLoading from 'expo-app-loading';
 // import ComponenteImagem from './src/pages/Tela-Inicial/components/componenteImagem';
 import Home from './src/pages/Tela-Inicial';
 import Login from './src/pages/Login';
+import Cadastro from './src/pages/Cadastro';
+import esqueceuSenha from './src/pages/esqueceSenha';
 
 // Importações de fontes
-import {
-  useFonts, 
-  Quicksand_400Regular,
-  Quicksand_700Bold 
-} from '@expo-google-fonts/quicksand';
-
-
-function Cadastro({navigation}){
-  let[fontsLoader] = useFonts({
-    Quicksand_400Regular,
-    Quicksand_700Bold
-  });
-  if(!fontsLoader){
-    return <AppLoading/>
-  }else{
-  return(
-    <>
-    <View style={styles.containerlogin1}>
-      <Icon name='arrow-back-ios' style={styles.iconBack} />
-      <Text onPress={() => navigation.navigate('Login')} style={styles.buttonback}>Voltar</Text>
-    </View>
-    <View style={styles.containerlogin2}>
-      <View style={styles.centrologin}>
-        <Text style={styles.textodologin}>Cadastro</Text>
-      </View>
-      
-      <View>
-      <TextInput style={styles.inputText2} placeholder="Nome" />
-      <TextInput style={styles.inputText2} placeholder="Sobrenome" />
-      <TextInput style={styles.inputText2} placeholder="Email" />
-      <TextInput style={styles.inputText2} secureTextEntry={true} placeholder="Senha" autoCorrect={false} />
-      <TextInput style={styles.inputText2} secureTextEntry={true} placeholder="Confirmação de senha" autoCorrect={false} />
-      </View>
-
-      <View style={styles.botoes}>
-
-        <View style={styles.botaoLogin2}>
-        <Text style={styles.textLogin}>Próximo</Text>
-        </View>
-
-      </View>
-
-    </View>
-    </>
-  );
-  }
-}
 
 const Stack = createNativeStackNavigator();
 
@@ -71,6 +26,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} options={{title:'', headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="Cadastro" component={Cadastro} options={{title:'', headerShown: false }}/>
+        <Stack.Screen name="esqueceuSenha" component={esqueceuSenha} options={{title:'', headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
     <StatusBar style="light" 
