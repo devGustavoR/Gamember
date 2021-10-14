@@ -123,6 +123,11 @@ const styles = StyleSheet.create({
     fontSize:15,
     // fontFamily:'Quicksand_400Regular',
   },
+
+  centralizarIcon:{
+    alignItems:'center',
+    justifyContent:'center',
+  },
 });
 
 export default styles;

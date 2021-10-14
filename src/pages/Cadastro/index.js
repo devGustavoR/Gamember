@@ -36,7 +36,7 @@ export default function Cadastro({navigation}){
     <View style={styles.containerlogin1}>
       {/* <Icon name='arrow-back-ios' style={styles.iconBack2} onPress={() => navigation.navigate('Home')} /> */}
       <Icon name='arrow-back-ios' style={styles.iconBack2} />
-      <Text onPress={() => navigation.navigate('Home')} style={styles.buttonback}>Voltar</Text>
+      <Text onPress={() => navigation.navigate('Login')} style={styles.buttonback}>Voltar</Text>
     </View>
     <View style={styles.containerlogin2}>
       <View style={styles.centrologin}>

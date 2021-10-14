@@ -63,7 +63,7 @@ export default function Login({navigation}){
         {/* Error */}
         {errorLogin === true
         ?
-        <View>
+        <View style={styles.centralizarIcon}>
           <Icon name='warning' size={24}/>
           <Text>Email ou senha inválida</Text>
         </View>
