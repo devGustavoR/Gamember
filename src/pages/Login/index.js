@@ -30,7 +30,7 @@ export default function Login({navigation}){
     }
     
     useEffect(()=>{
-
+      
     }, [])
     
 
@@ -98,6 +98,12 @@ export default function Login({navigation}){
           <Text style={styles.textEsqueceuasenha} onPress={() => navigation.navigate('Cadastro')}>Você é novo aqui?</Text>
         </View>
       </View>
+
+      {/* <View>
+        <View style={styles.botaoVoceenovo}>
+        <Text style={styles.textEsqueceuasenha} onPress={() => navigation.navigate('perguntaspessoais')}>Você é novo aqui?</Text>
+        </View>
+      </View> */}
 
     </View>
 

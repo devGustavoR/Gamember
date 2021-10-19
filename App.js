@@ -2,17 +2,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import {Icon} from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AppLoading from 'expo-app-loading';
 
 // Importações páginas
-// import ComponenteImagem from './src/pages/Tela-Inicial/components/componenteImagem';
 import Home from './src/pages/Tela-Inicial';
 import Login from './src/pages/Login';
 import Cadastro from './src/pages/Cadastro';
 import esqueceuSenha from './src/pages/esqueceSenha';
+// import perguntaspessoais from './src/pages/Jogo-perguntas-pessoais';
 
 // Importações de fontes
 
@@ -27,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="Cadastro" component={Cadastro} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="esqueceuSenha" component={esqueceuSenha} options={{title:'', headerShown: false }}/>
+        {/* <Stack.Screen name="perguntaspessoais" component={perguntaspessoais} options={{title:'', headerShown: false}}/> */}
       </Stack.Navigator>
     </NavigationContainer>
     <StatusBar style="light" 

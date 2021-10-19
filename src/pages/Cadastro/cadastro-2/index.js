@@ -1,60 +1,15 @@
 // Importações React
-import React, {Component, useState,useEffect} from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
 
-// Importação Firebase
-import firebase from '../../config/firebase';
-// import {addInfo} from './setdatabase';
-
-
 // Importações de páginas
 
+// Importações Firebase
+import firebase from '../../../config/firebase';
 
-export default function Cadastro({navigation}){
-
-  const [email,setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorRegister, setErrorResgister] = useState('');
-
-  const [nome,setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-
-  const register = () =>{
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    let user = userCredential.user;
-    navigation.navigate('Login', {idUser: user.uid})
-
-    // Envio de e-mail de verificação
-    firebase.auth().currentUser.sendEmailVerification()
-    .then(() => {
-    alert('Um email de verificação foi enviado para você!');
-    });
-
-    // Database
-    // addInfo({
-    //   name:nome,
-    //   surname:sobrenome,
-    //   email:email
-    // })
-    
-  })
-  .catch((error) => {
-    setErrorResgister(true);
-    let errorCode = error.code;
-    let errorMessage = error.message;
-    
-  });
-  
-  };
-  
-  useEffect(()=>{
-   
-
-  },[])
-
+export default function Cadastroparte2({navigation}){
   return(
     <>
     <View style={styles.containerlogin1}>
@@ -114,7 +69,7 @@ export default function Cadastro({navigation}){
           <Text style={styles.textLogin}>Próximo</Text>   
         </TouchableOpacity>
         :
-        <TouchableOpacity style={styles.botaoLogin2} onPress={register} >
+        <TouchableOpacity style={styles.botaoLogin2} onPress={register2} >
           <Text style={styles.textLogin}>Próximo</Text>   
         </TouchableOpacity>
         }
