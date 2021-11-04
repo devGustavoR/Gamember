@@ -3,80 +3,81 @@ import React, {useState, useEffect} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
+import {Picker} from '@react-native-picker/picker';
 
 // Importações de páginas
 
 // Importações Firebase
 import firebase from '../../../config/firebase';
+import {addQuestion} from '../setdatabase';
 
-export default function Cadastroparte2({navigation}){
+export default function Cadastro2({navigation}){
+
+  const [pergunta1, setPergunta1] = useState('');
+  const [pergunta2, setPergunta2] = useState('');
+  const [pergunta3, setPergunta3] = useState('');
+  const [pergunta4, setPergunta4] = useState('');
+  const [pergunta5, setPergunta5] = useState('');
+
+  const register = () =>{
+    addQuestion(pergunta1,pergunta2,pergunta3,pergunta4,pergunta5);
+    navigation.navigate('Home');
+  }
+
   return(
     <>
-    <View style={styles.containerlogin1}>
-      {/* <Icon name='arrow-back-ios' style={styles.iconBack2} onPress={() => navigation.navigate('Home')} /> */}
-      <Icon name='arrow-back-ios' style={styles.iconBack2} />
+
+    <View style={styles.containerdeteladecadastro}>
+      <Icon name='arrow-back-ios' style={styles.iconBack} />
       <Text onPress={() => navigation.navigate('Login')} style={styles.buttonback}>Voltar</Text>
     </View>
-    <View style={styles.containerlogin2}>
-      <View style={styles.centrologin}>
-        <Text style={styles.textodologin}>Cadastro</Text>
-      </View>
-      
-      <View>
 
-      <TextInput style={styles.inputText2} 
-        placeholder="Nome" 
-        type="text" 
-        onChangeText={(text) => setNome(text)} 
-        value={nome}/>
-
-      <TextInput style={styles.inputText2} 
-        placeholder="Sobrenome"
-        type="text"
-        onChangeText={(text) => setSobrenome(text)}
-        value={sobrenome} />
-
-      <TextInput style={styles.inputText} 
-        placeholder="Email" 
-        type="text"
-        onChangeText={(text) => setEmail(text)}
-        value={email} 
-        />
-
-      <TextInput style={styles.inputText} 
-        secureTextEntry={true} 
-        placeholder="Senha" autoCorrect={false} 
-        type="text"
-        onChangeText={(text) => setPassword(text)}
-        value={password} />
-
-      <TextInput style={styles.inputText2} secureTextEntry={true} placeholder="Confirmação de senha" autoCorrect={false} />
-
-      {/* Error */}
-      {errorRegister === true
-        ?
-        <View>
-          <Icon name='warning' size={24}/>
-          <Text>Email ou senha inválida</Text>
-        </View>
-        :
-        <View/>
-        }
-
-        {email === "" || password === ""
-        ?
-        <TouchableOpacity disabled={true} style={styles.botaoLogin2} >
-          <Text style={styles.textLogin}>Próximo</Text>   
-        </TouchableOpacity>
-        :
-        <TouchableOpacity style={styles.botaoLogin2} onPress={register2} >
-          <Text style={styles.textLogin}>Próximo</Text>   
-        </TouchableOpacity>
-        }
+    <View style={styles.containerdeteladecadastro2}>
+      <View style={styles.centrodotexto}>
+        <Text style={styles.textodologin}>Perguntas Pessoais</Text>
       </View>
 
+      <TextInput style={styles.inputText}
+      placeholder="Em qual cidade você nasceu?"
+      type="text"
+      onChangeText={(text) => setPergunta1(text)}
+      value={pergunta1}/>
 
-    </View>
+    <Picker 
+      style={styles.selecaodeesporte}
+      placeholder="test"
+      selectedValue={pergunta5}
+      onValueChange={(itemValue, itemIndex) =>
+        setPergunta5(itemValue)
+      }>
+      <Picker.Item label="Você praticava esportes na adolecência?" value=""/>
+      <Picker.Item label="Sim" value="sim" />
+      <Picker.Item label="Não" value="não" />
+    </Picker>
+
+    <TextInput style={styles.inputText}
+    placeholder="Qual o nome da sua mãe?"
+    type="text"
+    onChangeText={(text) => setPergunta2(text)}
+    value={pergunta2}/>
+
+    <TextInput style={styles.inputText}
+    placeholder="Quantos irmãos você tem?"
+    keyboardType='numeric'
+    onChangeText={(text) => setPergunta3(text)}
+    value={pergunta3}/>
+
+    <TextInput style={styles.inputText}
+    placeholder="Quantos irmãos você tem?"
+    type='text'
+    onChangeText={(text) => setPergunta4(text)}
+    value={pergunta4}/>
+
+    <TouchableOpacity style={styles.botaoLogin2} onPress={register}>
+      <Text style={styles.textLogin}>Próximo</Text>   
+    </TouchableOpacity>
+
+      </View>
     </>
   );
 }

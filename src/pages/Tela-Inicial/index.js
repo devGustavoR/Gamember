@@ -15,8 +15,8 @@ export default class Home extends Component{
     return(
       <><View style={styles.container}>
       <ComponenteImagem />
-      <View style={styles.botaoVamosiniciar} >
-      <Text style={styles.textVamosiniciar} onPress={() => navigation.navigate('Login')}>Vamos Iniciar</Text>
+        <View style={styles.botaoVamosiniciar} >
+          <Text style={styles.textVamosiniciar} onPress={() => navigation.navigate('Login')}>Vamos Iniciar</Text>
         </View>
     </View>
       </>

@@ -6,7 +6,7 @@ import {Icon} from 'react-native-elements';
 
 // Importação Firebase
 import firebase from '../../config/firebase';
-// import {addInfo} from './setdatabase';
+import {addInfo} from './setdatabase';
 
 
 // Importações de páginas
@@ -25,20 +25,8 @@ export default function Cadastro({navigation}){
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     let user = userCredential.user;
-    navigation.navigate('Login', {idUser: user.uid})
-
-    // Envio de e-mail de verificação
-    firebase.auth().currentUser.sendEmailVerification()
-    .then(() => {
-    alert('Um email de verificação foi enviado para você!');
-    });
-
-    // Database
-    // addInfo({
-    //   name:nome,
-    //   surname:sobrenome,
-    //   email:email
-    // })
+    navigation.navigate('Cadastro2', {idUser: user.uid})
+    addInfo(nome,sobrenome,email);
     
   })
   .catch((error) => {
@@ -49,11 +37,7 @@ export default function Cadastro({navigation}){
   });
   
   };
-  
-  useEffect(()=>{
-   
 
-  },[])
 
   return(
     <>

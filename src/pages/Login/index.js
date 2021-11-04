@@ -1,6 +1,6 @@
 // Importações React
 import React, {Component, useState,useEffect} from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
 
@@ -18,9 +18,17 @@ export default function Login({navigation}){
     const loginFirebase = () =>{
 
       firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         let user = userCredential.user;
-        navigation.navigate('Home', {idUser: user.uid})
+
+        const currentUser = firebase.auth().currentUser;
+        
+        navigation.navigate('teladejogos', {idUser: user.uid});
+
+        Alert.alert(
+          'Sucesso!',
+          `${currentUser.email}`
+        );
       })
       .catch((error) => {
         setErrorLogin(true)
@@ -37,7 +45,6 @@ export default function Login({navigation}){
   return(
     <>
     <View style={styles.containerlogin1}>
-      {/* <Icon name='arrow-back-ios' style={styles.iconBack2} onPress={() => navigation.navigate('Home')} /> */}
       <Icon name='arrow-back-ios' style={styles.iconBack2} />
       <Text onPress={() => navigation.navigate('Home')} style={styles.buttonback}>Voltar</Text>
     </View>
@@ -77,19 +84,17 @@ export default function Login({navigation}){
           <Text style={styles.textLogin}>Login</Text>   
         </TouchableOpacity>
         :
-        <TouchableOpacity style={styles.botaoLogin} onPress={loginFirebase} >
-          <Text style={styles.textLogin}>Login</Text>   
-        </TouchableOpacity>
+        <View style={styles.botoes}>
+          <TouchableOpacity style={styles.botaoLogin} onPress={loginFirebase} >
+            <Text style={styles.textLogin}>Login</Text>   
+          </TouchableOpacity>
+        </View>
         }
 
 
       </View>
 
       <View style={styles.botoes}>
-
-        <View style={styles.botaoEsqueceuasenha}>
-          <Text style={styles.textEsqueceuasenha} onPress={() => navigation.navigate('esqueceuSenha')}>Esqueceu a senha?</Text>
-        </View>
 
       </View>
 
@@ -110,4 +115,3 @@ export default function Login({navigation}){
     </>
   );
 }
-

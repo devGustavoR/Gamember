@@ -10,6 +10,8 @@ import Home from './src/pages/Tela-Inicial';
 import Login from './src/pages/Login';
 import Cadastro from './src/pages/Cadastro';
 import esqueceuSenha from './src/pages/esqueceSenha';
+import Cadastro2 from './src/pages/Cadastro/cadastro-2';
+import teladejogos from './src/pages/Teladejogos';
 // import perguntaspessoais from './src/pages/Jogo-perguntas-pessoais';
 
 // Importações de fontes
@@ -25,7 +27,8 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="Cadastro" component={Cadastro} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="esqueceuSenha" component={esqueceuSenha} options={{title:'', headerShown: false }}/>
-        {/* <Stack.Screen name="perguntaspessoais" component={perguntaspessoais} options={{title:'', headerShown: false}}/> */}
+        <Stack.Screen name="Cadastro2" component={Cadastro2} options={{title:'', headerShown: false }}/>
+        <Stack.Screen name="teladejogos" component={teladejogos} options={{title:'', headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
     <StatusBar style="light" 

@@ -4,6 +4,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#30c5ff',
+    alignItems:'center',
+    justifyContent:'center',
   },
   botaoVamosiniciar:{
     backgroundColor:'#fff',
