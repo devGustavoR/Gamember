@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 
   textodologin:{
-    fontSize:40,
+    fontSize:30,
     marginTop:10,
     color:'#504F4F',
   },
@@ -46,17 +46,21 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth:1,
     marginBottom:20,
+    borderBottomColor:"#30c5ff",
   },
 
   selecaodeesporte:{
-    height: 40,
-    width: '100%',
-    padding: 10,
+    height: 30,
+    width: '95%',
+    // padding: 10,
     borderBottomWidth:1,
     borderTopWidth:0,
     borderRightWidth:0,
     borderLeftWidth:0,
+    borderBottomColor:"#30c5ff",
     marginBottom:20,
+    marginLeft:10,
+    marginRight:10,
   },
 
   textLogin:{
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     marginLeft:10,
-    marginTop:180,
+    marginTop:100,
     borderRadius:15,
   },
 

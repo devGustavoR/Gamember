@@ -1,6 +1,6 @@
 // Importações react
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 
@@ -15,9 +15,9 @@ export default class Home extends Component{
     return(
       <><View style={styles.container}>
       <ComponenteImagem />
-        <View style={styles.botaoVamosiniciar} >
-          <Text style={styles.textVamosiniciar} onPress={() => navigation.navigate('Login')}>Vamos Iniciar</Text>
-        </View>
+        <TouchableOpacity style={styles.botaoVamosiniciar} onPress={() => navigation.navigate('Login')} >
+          <Text style={styles.textVamosiniciar} >Iniciar</Text>
+        </TouchableOpacity>
     </View>
       </>
   );

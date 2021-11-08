@@ -22,7 +22,7 @@ class ComponenteImagem extends Component{
 }
 
 const {height} = Dimensions.get("screen");
-const height_logo = height * 0.60 ;
+const height_logo = height * 0.50 ;
 
 const styles = StyleSheet.create({
   logo:{

@@ -24,11 +24,6 @@ export default function Login({navigation}){
         const currentUser = firebase.auth().currentUser;
         
         navigation.navigate('teladejogos', {idUser: user.uid});
-
-        Alert.alert(
-          'Sucesso!',
-          `${currentUser.email}`
-        );
       })
       .catch((error) => {
         setErrorLogin(true)
@@ -50,7 +45,7 @@ export default function Login({navigation}){
     </View>
     <View style={styles.containerlogin2}>
       <View style={styles.centrologin}>
-        <Text style={styles.textodologin}>Seja Bem-Vindo!</Text>
+        <Text style={styles.textodologin}>Seja Bem-Vindo</Text>
       </View>
       
       <View>
@@ -90,6 +85,7 @@ export default function Login({navigation}){
           </TouchableOpacity>
         </View>
         }
+      
 
 
       </View>

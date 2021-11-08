@@ -3,20 +3,19 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#30c5ff',
+    backgroundColor: '#EAE8FE',
     alignItems:'center',
     justifyContent:'center',
   },
   botaoVamosiniciar:{
     backgroundColor:'#fff',
-    fontSize:20,
+    fontSize:30,
     color: '#fff',
     height: 45,
-    width: 279,
+    width: 150,
     alignItems:'center',
     justifyContent:'center',
-    marginLeft:40,
-    marginBottom:20,
+    marginBottom:30,
     borderRadius:15,
   },
 

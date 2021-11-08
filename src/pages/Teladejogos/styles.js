@@ -35,7 +35,41 @@ const styles = StyleSheet.create({
     width:66, 
     borderRadius:50, 
     marginLeft:18,
-    backgroundColor:"#1D3557",
+    backgroundColor:"rgba(0,0,0,0.5)",
+  },
+  textdejogos:{
+    color:"#fff",
+    marginTop:30,
+    fontSize:17,
+  },
+  textblocojogo:{
+    flexDirection:"row",
+    width: 150,
+    alignItems:"center",
+    justifyContent:"center",
+  },
+  blocojogo:{
+    backgroundColor:"#FEFEFE",
+    height: 200,
+    width: 190,
+    borderRadius:15,
+    padding: 5,
+  },
+  blocojogo2:{
+    backgroundColor:"#FEFEFE",
+    height: 200,
+    width: 190,
+    borderRadius:15,
+    padding: 5,
+    marginHorizontal:20,
+  },
+  blocojogo3:{
+    backgroundColor:"rgba(0,0,0,0.5)",
+    height: 200,
+    width: 190,
+    borderRadius:15,
+    padding: 5,
+    marginHorizontal:20,
   },
 });
 

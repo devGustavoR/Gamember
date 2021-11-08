@@ -12,6 +12,7 @@ import Cadastro from './src/pages/Cadastro';
 import esqueceuSenha from './src/pages/esqueceSenha';
 import Cadastro2 from './src/pages/Cadastro/cadastro-2';
 import teladejogos from './src/pages/Teladejogos';
+import Jogodamemoria from './src/pages/Jogo-da-memoria';
 // import perguntaspessoais from './src/pages/Jogo-perguntas-pessoais';
 
 // Importações de fontes
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen name="esqueceuSenha" component={esqueceuSenha} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="Cadastro2" component={Cadastro2} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="teladejogos" component={teladejogos} options={{title:'', headerShown: false }}/>
+        <Stack.Screen name="Jogodamemoria" component={Jogodamemoria} options={{title:'', headerShown: false }}/> 
       </Stack.Navigator>
     </NavigationContainer>
     <StatusBar style="light" 

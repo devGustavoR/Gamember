@@ -7,11 +7,10 @@ const styles = StyleSheet.create({
     fontSize:20,
     marginLeft:1,
     marginTop:20,
-    // fontFamily:'Quicksand_400Regular',
   },
 
   iconBack2:{
-    marginTop:20,
+    marginTop:23,
     marginLeft:10,
   },
 
@@ -20,7 +19,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAE8FE',
     height:10,
     flexDirection: "row",
-    // height:926,
   },
 
   containerlogin2:{
@@ -29,14 +27,12 @@ const styles = StyleSheet.create({
     height: 60,
     borderTopLeftRadius: 30, 
     borderTopRightRadius: 30,
-    // color:'#504F4F'
   },
 
   textodologin:{
-    fontSize:40,
+    fontSize:35,
     marginTop:10,
     color:'#504F4F',
-    // fontFamily:'Quicksand_400Regular',
   },
 
   centrologin:{
@@ -50,7 +46,6 @@ const styles = StyleSheet.create({
     borderBottomWidth:1,
     marginBottom:20,
     borderBottomColor:'#30c5ff',
-    // fontFamily:'Quicksand_400Regular',
   },
 
   inputText2:{
@@ -59,7 +54,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth:1,
     marginBottom:5,
-    // fontFamily:'Quicksand_400Regular',
   },
 
   botoes:{
@@ -94,7 +88,6 @@ const styles = StyleSheet.create({
   textLogin:{
     fontSize:20,
     color: '#fff',
-    // fontFamily:'Quicksand_400Regular',
   },
 
   botaoEsqueceuasenha:{
@@ -108,7 +101,6 @@ const styles = StyleSheet.create({
   textEsqueceuasenha:{
     color:'#504F4F',
     fontSize:20,
-    // fontFamily:'Quicksand_400Regular',
   },
 
   botaoVoceenovo:{
@@ -121,7 +113,6 @@ const styles = StyleSheet.create({
   textVoceenovo:{
     color:'#504F4F',
     fontSize:15,
-    // fontFamily:'Quicksand_400Regular',
   },
 
   centralizarIcon:{

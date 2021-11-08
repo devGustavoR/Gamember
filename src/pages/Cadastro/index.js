@@ -86,7 +86,7 @@ export default function Cadastro({navigation}){
         ?
         <View>
           <Icon name='warning' size={24}/>
-          <Text>Email ou senha inválida</Text>
+          <Text>Informações inválidas</Text>
         </View>
         :
         <View/>
@@ -94,7 +94,7 @@ export default function Cadastro({navigation}){
 
         {email === "" || password === ""
         ?
-        <TouchableOpacity disabled={true} style={styles.botaoLogin2} >
+        <TouchableOpacity style={styles.botaoLogin2} >
           <Text style={styles.textLogin}>Próximo</Text>   
         </TouchableOpacity>
         :

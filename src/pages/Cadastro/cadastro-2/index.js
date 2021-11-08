@@ -8,7 +8,6 @@ import {Picker} from '@react-native-picker/picker';
 // Importações de páginas
 
 // Importações Firebase
-import firebase from '../../../config/firebase';
 import {addQuestion} from '../setdatabase';
 
 export default function Cadastro2({navigation}){
@@ -21,7 +20,7 @@ export default function Cadastro2({navigation}){
 
   const register = () =>{
     addQuestion(pergunta1,pergunta2,pergunta3,pergunta4,pergunta5);
-    navigation.navigate('Home');
+    navigation.navigate('teladejogos');
   }
 
   return(
@@ -29,7 +28,7 @@ export default function Cadastro2({navigation}){
 
     <View style={styles.containerdeteladecadastro}>
       <Icon name='arrow-back-ios' style={styles.iconBack} />
-      <Text onPress={() => navigation.navigate('Login')} style={styles.buttonback}>Voltar</Text>
+      <Text onPress={() => navigation.navigate('Cadastro')} style={styles.buttonback}>Voltar</Text>
     </View>
 
     <View style={styles.containerdeteladecadastro2}>
@@ -47,9 +46,10 @@ export default function Cadastro2({navigation}){
       style={styles.selecaodeesporte}
       placeholder="test"
       selectedValue={pergunta5}
-      onValueChange={(itemValue, itemIndex) =>
+      onValueChange={(itemValue) =>
         setPergunta5(itemValue)
-      }>
+      }
+      itemStyle={{height: 44}}>
       <Picker.Item label="Você praticava esportes na adolecência?" value=""/>
       <Picker.Item label="Sim" value="sim" />
       <Picker.Item label="Não" value="não" />
@@ -67,11 +67,18 @@ export default function Cadastro2({navigation}){
     onChangeText={(text) => setPergunta3(text)}
     value={pergunta3}/>
 
-    <TextInput style={styles.inputText}
-    placeholder="Quantos irmãos você tem?"
-    type='text'
-    onChangeText={(text) => setPergunta4(text)}
-    value={pergunta4}/>
+    <Picker 
+      style={styles.selecaodeesporte}
+      placeholder="test"
+      selectedValue={pergunta4}
+      onValueChange={(itemValue) =>
+        setPergunta4(itemValue)
+      }
+      itemStyle={{height: 44}}>
+      <Picker.Item label="Você tem cônjuge?" value=""/>
+      <Picker.Item label="Sim" value="sim" />
+      <Picker.Item label="Não" value="não" />
+    </Picker>
 
     <TouchableOpacity style={styles.botaoLogin2} onPress={register}>
       <Text style={styles.textLogin}>Próximo</Text>   
