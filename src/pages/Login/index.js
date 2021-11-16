@@ -1,14 +1,11 @@
 // Importações React
-import React, {Component, useState,useEffect} from 'react';
-import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import React, {useState,useEffect} from 'react';
+import { Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
 
 // Importação Firebase
 import firebase from '../../config/firebase';
-
-
-// Importações de páginas
 
 export default function Login({navigation}){
       const [email,setEmail] = useState('');
@@ -20,8 +17,6 @@ export default function Login({navigation}){
       firebase.auth().signInWithEmailAndPassword(email, password)
       .then(async (userCredential) => {
         let user = userCredential.user;
-
-        const currentUser = firebase.auth().currentUser;
         
         navigation.navigate('teladejogos', {idUser: user.uid});
       })
@@ -39,11 +34,11 @@ export default function Login({navigation}){
 
   return(
     <>
-    <View style={styles.containerlogin1}>
-      <Icon name='arrow-back-ios' style={styles.iconBack2} />
+    <View style={styles.containerVoltar}>
+      <Icon name='arrow-back-ios' style={styles.iconBack} />
       <Text onPress={() => navigation.navigate('Home')} style={styles.buttonback}>Voltar</Text>
     </View>
-    <View style={styles.containerlogin2}>
+    <View style={styles.containerlogin}>
       <View style={styles.centrologin}>
         <Text style={styles.textodologin}>Seja Bem-Vindo</Text>
       </View>
@@ -65,10 +60,15 @@ export default function Login({navigation}){
         {/* Error */}
         {errorLogin === true
         ?
-        <View style={styles.centralizarIcon}>
+        <>
+        <View style={styles.iconError}>
           <Icon name='warning' size={24}/>
           <Text>Email ou senha inválida</Text>
         </View>
+        <TouchableOpacity style={styles.botaoEsqueceuasenha} onPress={() => navigation.navigate('esqueceuSenha')} >
+        <Text style={styles.textEsqueceuasenha}>Esqueceu sua senha?</Text>   
+      </TouchableOpacity>
+      </>
         :
         <View/>
         }
@@ -79,7 +79,7 @@ export default function Login({navigation}){
           <Text style={styles.textLogin}>Login</Text>   
         </TouchableOpacity>
         :
-        <View style={styles.botoes}>
+        <View style={styles.botoesladoalado}>
           <TouchableOpacity style={styles.botaoLogin} onPress={loginFirebase} >
             <Text style={styles.textLogin}>Login</Text>   
           </TouchableOpacity>
@@ -87,10 +87,6 @@ export default function Login({navigation}){
         }
       
 
-
-      </View>
-
-      <View style={styles.botoes}>
 
       </View>
 

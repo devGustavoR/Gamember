@@ -7,14 +7,23 @@ import {Icon} from 'react-native-elements';
 
 // Firebase
 import firebase from '../../config/firebase';
+// import database from '../../Cadastro/setdatabase';
 
 // Páginas
 import Login from '../Login';
 
 export default function teladejogos({navigation}){
-  firebase.database().ref('users').once('value', (data) =>{
-    console.log(data.toJSON());
-  })
+  // const name = () =>{
+  //   return new Promise((resolve,reject)=>{
+  //     var database = firebase.database();
+  //     let a = []
+
+  //     database.ref('users').once('value',(snapshot)=>{
+  //       snapshot.forEach((childSnapshot)=>{
+          
+  //       })
+  //     })
+  //   })
 
   return(
     <ImageBackground source={require('../../../assets/back.png')} style={{width:'100%', height:"100%"}}>
@@ -23,6 +32,8 @@ export default function teladejogos({navigation}){
         <Icon name='settings' size={30} color="#a2a2db" style={{marginLeft:230}}/>       
       </View>
 
+      
+      
       <View style={{paddingHorizontal:40, marginTop:25}}>
         <Text style={styles.textodebemvindodevolta}>Bem vindo de volta </Text>
         
@@ -31,9 +42,9 @@ export default function teladejogos({navigation}){
             <Icon name="style" size={30} color="white"/>
           </TouchableOpacity>
 
-          <View style={styles.jogo2}>
+          <TouchableOpacity style={styles.jogo2} onPress={() => navigation.navigate('perguntaspessoais')}>
             <Icon name="help" size={30} color="white"/>
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.jogo3}>
             <Icon name="hardware" size={30} color="white"/>

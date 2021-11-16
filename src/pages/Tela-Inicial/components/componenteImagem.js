@@ -1,5 +1,4 @@
 // Importações React
-// Importações
 import React, { Component } from 'react';
 import {
   StyleSheet, 

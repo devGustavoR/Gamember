@@ -8,10 +8,6 @@ import {Icon} from 'react-native-elements';
 import firebase from '../../config/firebase';
 import {addInfo} from './setdatabase';
 
-
-// Importações de páginas
-
-
 export default function Cadastro({navigation}){
 
   const [email,setEmail] = useState('');
@@ -41,25 +37,24 @@ export default function Cadastro({navigation}){
 
   return(
     <>
-    <View style={styles.containerlogin1}>
-      {/* <Icon name='arrow-back-ios' style={styles.iconBack2} onPress={() => navigation.navigate('Home')} /> */}
-      <Icon name='arrow-back-ios' style={styles.iconBack2} />
-      <Text onPress={() => navigation.navigate('Login')} style={styles.buttonback}>Voltar</Text>
-    </View>
-    <View style={styles.containerlogin2}>
-      <View style={styles.centrologin}>
-        <Text style={styles.textodologin}>Cadastro</Text>
+    <TouchableOpacity style={styles.containerVoltar} onPress={() => navigation.navigate('Login')}>
+      <Icon name='arrow-back-ios' style={styles.iconBack} />
+      <Text style={styles.buttonback}>Voltar</Text>
+    </TouchableOpacity>
+    <View style={styles.containerCadastro}>
+      <View style={styles.centroCadastro}>
+        <Text style={styles.textodocadastro}>Cadastro</Text>
       </View>
       
       <View>
 
-      <TextInput style={styles.inputText2} 
+      <TextInput style={styles.inputText} 
         placeholder="Nome" 
         type="text" 
         onChangeText={(text) => setNome(text)} 
         value={nome}/>
 
-      <TextInput style={styles.inputText2} 
+      <TextInput style={styles.inputText} 
         placeholder="Sobrenome"
         type="text"
         onChangeText={(text) => setSobrenome(text)}
@@ -79,31 +74,32 @@ export default function Cadastro({navigation}){
         onChangeText={(text) => setPassword(text)}
         value={password} />
 
-      <TextInput style={styles.inputText2} secureTextEntry={true} placeholder="Confirmação de senha" autoCorrect={false} />
+      <TextInput style={styles.inputText} secureTextEntry={true} placeholder="Confirmação de senha" autoCorrect={false} />
 
       {/* Error */}
       {errorRegister === true
         ?
-        <View>
-          <Icon name='warning' size={24}/>
-          <Text>Informações inválidas</Text>
-        </View>
+        <><View>
+              <Icon name='warning' size={24} />
+              <Text>Dados já constam no nosso banco de dados</Text>
+            </View>
+            </>
         :
         <View/>
         }
 
-        {email === "" || password === ""
+        {nome === "" || sobrenome === "" || email === "" || password === "" 
         ?
-        <TouchableOpacity style={styles.botaoLogin2} >
-          <Text style={styles.textLogin}>Próximo</Text>   
+        <TouchableOpacity style={styles.botaoProximo} disabled={true} >
+          <Text style={styles.textProximo}>Próximo</Text>   
         </TouchableOpacity>
         :
-        <TouchableOpacity style={styles.botaoLogin2} onPress={register} >
-          <Text style={styles.textLogin}>Próximo</Text>   
+        <TouchableOpacity style={styles.botaoProximo} onPress={register} >
+          <Text style={styles.textProximo}>Próximo</Text>   
         </TouchableOpacity>
         }
       </View>
-
+      
 
     </View>
     </>

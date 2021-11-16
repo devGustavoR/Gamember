@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  containerlogin1:{
+  containerVoltar:{
     flex: 1,
     backgroundColor: '#EAE8FE',
     height:10,
@@ -9,22 +9,34 @@ const styles = StyleSheet.create({
     // height:926,
   },
 
-  containerlogin2:{
+  buttonback:{
+    color:'#30c5ff',
+    width: 150,
+    fontSize:20,
+    marginLeft:1,
+    marginTop:20,
+  },
+
+  iconBack:{
+    marginTop:23,
+    marginLeft:10,
+  },
+
+  containerCadastro:{
     flex: 4,
     backgroundColor: '#FFFFFF',
     height: 60,
     borderTopLeftRadius: 30, 
     borderTopRightRadius: 30,
-    // color:'#504F4F'
   },
 
-  textodologin:{
+  textodocadastro:{
     fontSize:40,
     marginTop:10,
     color:'#504F4F',
   },
 
-  centrologin:{
+  centroCadastro:{
     alignItems:'center',
   },
 
@@ -37,20 +49,11 @@ const styles = StyleSheet.create({
     borderBottomColor:"#30c5ff",
   },
 
-  inputText2:{
-    height: 40,
-    margin: 12,
-    padding: 10,
-    borderBottomWidth:1,
-    marginBottom:5,
-    borderBottomColor:"#30c5ff",
-  },
-
   botoes:{
     flexDirection: "row",
   },
 
-  botaoLogin:{
+  botaoProximo:{
     backgroundColor:'#30c5ff',
     fontSize:20,
     color: '#fff',
@@ -60,63 +63,13 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     marginLeft:10,
     borderRadius:15,
+    marginTop:10,
   },
 
-  botaoLogin2:{
-    backgroundColor:'#30c5ff',
+  textProximo:{
     fontSize:20,
     color: '#fff',
-    height: 45,
-    width: 150,
-    alignItems:'center',
-    justifyContent:'center',
-    marginLeft:10,
-    marginTop:70,
-    borderRadius:15,
-  },
-
-  textLogin:{
-    fontSize:20,
-    color: '#fff',
-  },
-
-  botaoEsqueceuasenha:{
-    color: '#fff',
-    marginLeft:25,
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:15,
-  },
-
-  textEsqueceuasenha:{
-    color:'#504F4F',
-    fontSize:20,
-  },
-
-  botaoVoceenovo:{
-    color: '#fff',
-    marginLeft:15,
-    marginTop:200,
-    borderRadius:15,
-  },
-
-  textVoceenovo:{
-    color:'#504F4F',
-    fontSize:15,
-  },
-
-  buttonback:{
-    color:'#30c5ff',
-    width: 150,
-    fontSize:20,
-    marginLeft:1,
-    marginTop:20,
-  },
-
-  iconBack2:{
-    marginTop:20,
-    marginLeft:10,
-  },
+  }, 
 });
 
 export default styles;

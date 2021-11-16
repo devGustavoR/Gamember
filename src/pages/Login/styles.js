@@ -9,19 +9,19 @@ const styles = StyleSheet.create({
     marginTop:20,
   },
 
-  iconBack2:{
+  iconBack:{
     marginTop:23,
     marginLeft:10,
   },
 
-  containerlogin1:{
+  containerVoltar:{
     flex: 1,
     backgroundColor: '#EAE8FE',
     height:10,
     flexDirection: "row",
   },
 
-  containerlogin2:{
+  containerlogin:{
     flex: 4,
     backgroundColor: '#FFFFFF',
     height: 60,
@@ -48,15 +48,7 @@ const styles = StyleSheet.create({
     borderBottomColor:'#30c5ff',
   },
 
-  inputText2:{
-    height: 40,
-    margin: 12,
-    padding: 10,
-    borderBottomWidth:1,
-    marginBottom:5,
-  },
-
-  botoes:{
+  botoesladoalado:{
     flexDirection: "row",
   },
 
@@ -72,19 +64,6 @@ const styles = StyleSheet.create({
     borderRadius:15,
   },
 
-  botaoLogin2:{
-    backgroundColor:'#30c5ff',
-    fontSize:20,
-    color: '#fff',
-    height: 45,
-    width: 150,
-    alignItems:'center',
-    justifyContent:'center',
-    marginLeft:10,
-    marginTop:180,
-    borderRadius:15,
-  },
-
   textLogin:{
     fontSize:20,
     color: '#fff',
@@ -93,6 +72,8 @@ const styles = StyleSheet.create({
   botaoEsqueceuasenha:{
     color: '#fff',
     marginLeft:25,
+    marginTop:10,
+    marginBottom:10,
     alignItems:'center',
     justifyContent:'center',
     borderRadius:15,
@@ -115,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize:15,
   },
 
-  centralizarIcon:{
+  iconError:{
     alignItems:'center',
     justifyContent:'center',
   },

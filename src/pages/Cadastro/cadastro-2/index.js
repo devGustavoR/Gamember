@@ -1,11 +1,9 @@
 // Importações React
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {Icon} from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
-
-// Importações de páginas
 
 // Importações Firebase
 import {addQuestion} from '../setdatabase';
