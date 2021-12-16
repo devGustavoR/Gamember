@@ -7,10 +7,6 @@ import {Icon} from 'react-native-elements';
 // Importação Firebase
 import firebase from '../../config/firebase';
 
-
-// Importações de páginas
-
-
 export default function esqueceSenha({navigation}){
 
   const [email,setEmail] = useState('');

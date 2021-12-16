@@ -62,12 +62,14 @@ export default function Login({navigation}){
         ?
         <>
         <View style={styles.iconError}>
-          <Icon name='warning' size={24}/>
-          <Text>Email ou senha inválida</Text>
+          <Icon name='warning' size={24} color='red'/>
+          <Text style={styles.textEsqueceuasenha}>Email ou senha inválida</Text>
+
+          <TouchableOpacity style={styles.botaoEsqueceuasenha} onPress={() => navigation.navigate('esqueceuSenha')} >
+            <Text style={styles.textEsqueceuasenha}>Esqueceu sua senha?</Text>   
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.botaoEsqueceuasenha} onPress={() => navigation.navigate('esqueceuSenha')} >
-        <Text style={styles.textEsqueceuasenha}>Esqueceu sua senha?</Text>   
-      </TouchableOpacity>
+        
       </>
         :
         <View/>
@@ -76,12 +78,12 @@ export default function Login({navigation}){
         {email === "" || password === ""
         ?
         <TouchableOpacity disabled={true} style={styles.botaoLogin} >
-          <Text style={styles.textLogin}>Login</Text>   
+          <Text style={styles.textLogin}>Logar</Text>   
         </TouchableOpacity>
         :
         <View style={styles.botoesladoalado}>
           <TouchableOpacity style={styles.botaoLogin} onPress={loginFirebase} >
-            <Text style={styles.textLogin}>Login</Text>   
+            <Text style={styles.textLogin}>Logar</Text>   
           </TouchableOpacity>
         </View>
         }

@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
 
   selecaodeesporte:{
     height: 30,
-    width: '95%',
-    // padding: 10,
+    width: '94,5%',
     borderBottomWidth:1,
     borderTopWidth:0,
     borderRightWidth:0,
@@ -61,6 +60,10 @@ const styles = StyleSheet.create({
     marginBottom:20,
     marginLeft:10,
     marginRight:10,
+  },
+
+  textSelecaodeEsporte:{
+    color:'#504F4F',
   },
 
   textLogin:{

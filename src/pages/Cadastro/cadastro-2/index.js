@@ -48,7 +48,7 @@ export default function Cadastro2({navigation}){
         setPergunta5(itemValue)
       }
       itemStyle={{height: 44}}>
-      <Picker.Item label="Você praticava esportes na adolecência?" value=""/>
+      <Picker.Item label="Você praticava esportes na adolescência?" value=""/>
       <Picker.Item label="Sim" value="sim" />
       <Picker.Item label="Não" value="não" />
     </Picker>
@@ -73,13 +73,13 @@ export default function Cadastro2({navigation}){
         setPergunta4(itemValue)
       }
       itemStyle={{height: 44}}>
-      <Picker.Item label="Você tem cônjuge?" value=""/>
+      <Picker.Item label="Você tem cônjuge?" value="" style={styles.textSelecaodeEsporte}/>
       <Picker.Item label="Sim" value="sim" />
       <Picker.Item label="Não" value="não" />
     </Picker>
 
     <TouchableOpacity style={styles.botaoLogin2} onPress={register}>
-      <Text style={styles.textLogin}>Próximo</Text>   
+      <Text style={styles.textLogin}>Concluir</Text>   
     </TouchableOpacity>
 
       </View>

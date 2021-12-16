@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   fundo:{
-    backgroundColor:"#d0e0e6",
+    backgroundColor:"#252c4a",
     minHeight:100,
     display: "flex",
     justifyContent:"center",
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   cards:{
     flexDirection:"row",
-  }
+  },
 });
 
 export default styles;

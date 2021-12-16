@@ -71,9 +71,8 @@ const styles = StyleSheet.create({
 
   botaoEsqueceuasenha:{
     color: '#fff',
-    marginLeft:25,
     marginTop:10,
-    marginBottom:10,
+    marginBottom:17,
     alignItems:'center',
     justifyContent:'center',
     borderRadius:15,
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
 
   textEsqueceuasenha:{
     color:'#504F4F',
-    fontSize:20,
+    fontSize:16,
   },
 
   botaoVoceenovo:{
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
   },
+
 });
 
 export default styles;

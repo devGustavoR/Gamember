@@ -259,12 +259,12 @@ const Quiz = ({navigation}) => {
                            <TouchableOpacity
                            onPress={restartQuiz}
                            style={{
-                               backgroundColor: COLORS.accent,
+                               backgroundColor: '#7B1E7A',
                                padding: 20, width: '100%', borderRadius: 20
                            }}>
                                <Text style={{
                                    textAlign: 'center', color: COLORS.white, fontSize: 20
-                               }}>Refazer</Text>
+                               }}>Reiniciar</Text>
                            </TouchableOpacity>
                            <TouchableOpacity
                            onPress={() => navigation.navigate('teladejogos')}

@@ -7,7 +7,7 @@ export default class Card extends React.Component {
     render() {
         let CardSource = FontAwesome;
         let icon_name = 'question-circle';
-        let icon_color = '#393939';
+        let icon_color = '#30c5ff';
 
         if (this.props.is_open) {
             CardSource = this.props.src;

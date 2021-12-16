@@ -12,6 +12,8 @@ import Cadastro2 from './src/pages/Cadastro/cadastro-2';
 import teladejogos from './src/pages/Teladejogos';
 import Jogodamemoria from './src/pages/Jogo-da-memoria/Main';
 import perguntaspessoais from './src/pages/Jogo-perguntas-pessoais/screens/Quiz';
+import Jogodavelocidade from './src/pages/Jogo-de-velocidade/index';
+import GameOver from './src/pages/Jogo-de-velocidade/GameOver/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +28,9 @@ export default function App() {
         <Stack.Screen name="Cadastro2" component={Cadastro2} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="teladejogos" component={teladejogos} options={{title:'', headerShown: false }}/>
         <Stack.Screen name="Jogodamemoria" component={Jogodamemoria} options={{title:'', headerShown: false }}/> 
-        <Stack.Screen name="perguntaspessoais" component={perguntaspessoais} options={{title:'', headerShown: false }}/> 
+        <Stack.Screen name="perguntaspessoais" component={perguntaspessoais} options={{title:'', headerShown: false }}/>
+        <Stack.Screen name="Jogodavelocidade" component={Jogodavelocidade} options={{title:'', headerShown: false }}/>
+        <Stack.Screen name="GameOver" component={GameOver} options={{title:'', headerShown: false }}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );

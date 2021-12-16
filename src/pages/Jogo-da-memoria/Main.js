@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { Ionicons, FontAwesome, Entypo } from '@expo/vector-icons';
 
 import Header from './components/Header';
@@ -105,6 +105,7 @@ export default class App extends React.Component {
   }
   
   render() {
+    const {navigation} = this.props
     return (
       <View style={styles.container}>
         <Header/>
@@ -114,12 +115,17 @@ export default class App extends React.Component {
           }
         </View>
         <Score score={this.state.score}/>
-        <Button
-          onPress={this.resetCards}
-          title="Reset"
-          color="#008CFA"
-        />
-        <Button title="Voltar" color="#008CFA"/>
+        <View style={styles.lado}>
+
+        <TouchableOpacity style={styles.botoes2} onPress={this.resetCards}>
+          <Text style={styles.textbotoes}>Reiniciar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botoes} onPress={() => {navigation.navigate("teladejogos")}}>
+          <Text style={styles.textbotoes}>Voltar</Text>
+        </TouchableOpacity>
+
+          </View>
       </View>
     );
   }
@@ -232,7 +238,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: '#252c4a',
   },
   row: {
     flex: 1,
@@ -242,6 +248,38 @@ const styles = StyleSheet.create({
     flex: 18,
     justifyContent: 'space-between',
     padding: 10,
-    marginTop: 20
+    marginTop: 20,
+  },
+  botaoVoltar:{
+    marginTop: 20,
+  },
+  lado:{
+    flexDirection:"row",
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  botoes:{
+    backgroundColor:'#30c5ff',
+    height: 45,
+    width: 150,
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:15,
+    marginLeft:10,
+    marginBottom:10,
+  },
+  botoes2:{
+    backgroundColor:'#7B1E7A',
+    height: 45,
+    width: 150,
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:15,
+    marginLeft:10,
+    marginBottom:10,
+  },
+  textbotoes:{
+    fontSize:20,
+    color: '#fff',
   }
 });

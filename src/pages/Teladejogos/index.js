@@ -35,20 +35,20 @@ export default function teladejogos({navigation}){
       
       
       <View style={{paddingHorizontal:40, marginTop:25}}>
-        <Text style={styles.textodebemvindodevolta}>Bem vindo de volta </Text>
+        <Text style={styles.textodebemvindodevolta}>Seja Bem-vindo! </Text>
         
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{marginRight:-40,marginTop:30}}>
-          <TouchableOpacity style={styles.jogo1} onPress={() => navigation.navigate('Jogodamemoria')}>
-            <Icon name="style" size={30} color="white"/>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.jogo2} onPress={() => navigation.navigate('perguntaspessoais')}>
+          <TouchableOpacity style={styles.jogo1} onPress={() => navigation.navigate('perguntaspessoais')}>
             <Icon name="help" size={30} color="white"/>
           </TouchableOpacity>
 
-          <View style={styles.jogo3}>
+          <TouchableOpacity style={styles.jogo2} onPress={() => navigation.navigate('Jogodamemoria')}>
+            <Icon name="style" size={30} color="white"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.jogo3} onPress={() => navigation.navigate('Jogodavelocidade')}>
             <Icon name="hardware" size={30} color="white"/>
-          </View>
+          </TouchableOpacity>
 
         </ScrollView>
 

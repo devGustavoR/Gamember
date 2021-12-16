@@ -35,12 +35,14 @@ const styles = StyleSheet.create({
     width:66, 
     borderRadius:50, 
     marginLeft:18,
-    backgroundColor:"rgba(0,0,0,0.5)",
+    backgroundColor:"#7B1E7A",
   },
   textdejogos:{
     color:"#fff",
     marginTop:30,
     fontSize:17,
+    alignItems:"center",
+    justifyContent:"center",
   },
   textblocojogo:{
     flexDirection:"row",
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
     marginHorizontal:20,
   },
   blocojogo3:{
-    backgroundColor:"rgba(0,0,0,0.5)",
+    backgroundColor:"#FEFEFE",
     height: 200,
     width: 190,
     borderRadius:15,

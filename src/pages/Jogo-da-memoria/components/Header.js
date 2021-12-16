@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         paddingTop: 20,
         paddingBottom: 5,
-        backgroundColor: '#f3f3f3'
+        backgroundColor: '#252c4a'
     },
     header_text: {
         fontWeight: 'bold',
