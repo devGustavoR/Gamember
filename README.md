@@ -1,5 +1,7 @@
 # 📱 Gamember
 
+![Gamember Logo](./assets/Logo.png)
+
 Gamember é um aplicativo desenvolvido como parte do nosso Trabalho de Conclusão de Curso (TCC) com o objetivo de auxiliar idosos que sofrem de Alzheimer. O aplicativo oferece três jogos projetados para treinar habilidades cognitivas, incluindo velocidade, memória e perguntas pessoais.
 
 ## 👥 Contribuidores
